@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Diabetes</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body style="background-color: rgb(226, 224, 92);">
+  <div class="login">
+    <h1 align="center">Diabetes Prediction</h1>
+    <br>
+    <p>Diabetes mellitus, commonly known as diabetes, is a metabolic disease that causes high blood sugar. The hormone insulin moves sugar from the blood into your cells to be stored or used for energy. With diabetes, your body either doesn’t make enough insulin or can’t effectively use the insulin it does make.Untreated high blood sugar from diabetes can damage your nerves, eyes, kidneys, and other organs.</p>
+    <br>
+    <br>
+    <img src="https://www.vitamink.com/images/article/diabetes_symptoms_complication_prevention.gif" align="left" height="350" width="450"> </img>
+    <img src="https://images.everydayhealth.com/images/diabetes/type-2-diabetes/does-sugar-cause-t2d-1440x810.jpg" align="right" height="350" width="450">  </img>
+    
+    <!-- Main Input For Receiving Query to our ML -->
+    
+    <form align="center" action="{{ url_for('predict')}}" method="post">
+      <input type="text" placeholder="Pregnancies" name="Pregnancies" required="required" ><br>
+      <br>
+      <input type="text" placeholder="Glucose" name="Glucose" required="required" ><br>
+      <br>
+      <input type="text" placeholder="Insulin" name="Insulin" required="required" ><br>
+      <br>
+      <input type="text" placeholder="BMI" name="BMI" required="required" ><br>
+      <br>
+      <input type="text" placeholder="DiabetesPF" name="DiabetesPF" required="required" ><br>
+      <br>
+      <input type="text" placeholder="Age" name="Age" required="required" ><br>
+      <br>
+      <br>
+      <br>
+      <input type="submit" id="Check diabetes" value="Check diabetes" style="height:50px; width:300px; background-color: rgb(185, 159, 168); font-size: 25px;"><br>
+    </form>
+    <br>
+    <br>
+    <h2 align="center"> {{prediction_text}} </h2>
+  </div>
+</body>
+</html>
